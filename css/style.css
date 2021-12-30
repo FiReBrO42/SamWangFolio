@@ -512,7 +512,7 @@ header{
 /* RWD平板 */
 @media (min-width:768px){
     #personal{
-        height: 50vh;
+        height: 40vh;
         flex-direction: row;
         justify-content: center;
          align-items: flex-start;
@@ -553,7 +553,7 @@ header{
 /* RWD桌機 */
 @media (min-width:992px){
     #personal{
-        height: 70vh;
+        height: 60vh;
         flex-direction: row;
         justify-content: center;
          align-items: flex-start;
