@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="./css/slick-theme.css">
     <!-- CSS lightbox -->
     <link rel="stylesheet" href="./css/lightbox.css">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <!-- mycss -->
     <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -23,17 +25,28 @@
                 <img src="./image/pt_logo.png" alt="Sam Wang">
             </h1>
             </a>
-            <nav >
-                <ul class="menu ">
+            <nav class="nav_menu" >
+                <ul class="menu">
                     <li><a href="./index.html">Home</a></li>
                     <li><a href="./case.html">Case</a></li>
-                    <li><a href="./product.html">Product</a></li>                
+                    <li><a href="./product.html">Product</a></li>
+                    <li><a href="./product-draw.html">Draw</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="ham_open"><ion-icon class="btn_menu" name="menu"></ion-icon></a>
+            <nav class="nav_ham" id="ham" >
+                <a href="#" class="ham_close"><ion-icon class="btn_close" name="close"></ion-icon></a>
+                <ul class="menu_ham">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./case.html">Case</a></li>
+                    <li><a href="./product.html">Product</a></li>
+                    <li><a href="./product-draw.html">Draw</a></li>
                 </ul>
             </nav>
         </div>
     </header>
     <main>
-        <section id="product">
+        <section id="case">
             <div class="aside">
                 <ul>
                     <li>
@@ -48,7 +61,7 @@
                 </ul>
             </div>
                 <div class="drawcontent">
-                    <div class="card" style="width: 15rem;">
+                    <div class="card"    >
                         <a  href="./image/photowall/pt_photowall02_06.jpg" data-lightbox="case_ad_image-1" data-title="招牌">
                             <img class="card-img-top" src="./image/photowall/pt_photowall02_06.jpg" alt="招牌" />
                         </a>
@@ -56,7 +69,7 @@
                           <h5 class="card-title">招牌</h5>
                         </div>
                     </div>
-                    <div class="card" style="width: 15rem;">
+                    <div class="card"    >
                         <a  href="./image/photowall/pt_photowall02_07.jpg" data-lightbox="case_ad_image-2" data-title="名片">
                             <img class="card-img-top" src="./image/photowall/pt_photowall02_07.jpg" alt="名片" />
                         </a>
@@ -64,7 +77,7 @@
                           <h5 class="card-title">名片</h5>
                         </div>
                     </div>
-                    <div class="card" style="width: 15rem;">
+                    <div class="card"    >
                         <a  href="./image/photowall/pt_photowall02_08.jpg" data-lightbox="case_ad_image-3" data-title="宣傳單">
                             <img class="card-img-top" src="./image/photowall/pt_photowall02_08.jpg" alt="宣傳單" />
                         </a>
@@ -72,7 +85,7 @@
                           <h5 class="card-title">宣傳單</h5>
                         </div>
                     </div>
-                    <div class="card" style="width: 15rem;">
+                    <div class="card"    >
                         <a  href="./image/photowall/pt_photowall02_09.jpg" data-lightbox="case_ad_image-4" data-title="結婚書約">
                             <img class="card-img-top" src="./image/photowall/pt_photowall02_09.jpg" alt="結婚書約" />
                         </a>
@@ -80,7 +93,7 @@
                           <h5 class="card-title">結婚書約</h5>
                         </div>
                     </div>
-                    <div class="card" style="width: 15rem;">
+                    <div class="card"    >
                         <a  href="./image/photowall/pt_photowall02_10.jpg" data-lightbox="case_ad_image-5" data-title="網路廣告圖">
                             <img class="card-img-top" src="./image/photowall/pt_photowall02_10.jpg" alt="網路廣告圖" />
                         </a>
@@ -137,6 +150,11 @@
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
         <!-- JS lightbox -->
         <script src="./js/lightbox.js"></script>
+        <!-- ionicon -->
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg .com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <!-- 自定義JS -->
+        <script src="./js/script.js"></script>
         <!-- slick 輪播圖 -->
         <script>
             $(document).ready(function(){

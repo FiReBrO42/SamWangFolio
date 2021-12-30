@@ -10,6 +10,10 @@
     <!-- CSS slick 輪播圖 -->
     <link rel="stylesheet" href="./css/slick.css"/>
     <link rel="stylesheet" href="./css/slick-theme.css">
+    <!-- CSS lightbox -->
+    <link rel="stylesheet" href="./css/lightbox.css">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <!-- mycss -->
     <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -21,17 +25,28 @@
                 <img src="./image/pt_logo.png" alt="Sam Wang">
             </h1>
             </a>
-            <nav >
-                <ul class="menu ">
+            <nav class="nav_menu" >
+                <ul class="menu">
                     <li><a href="./index.html">Home</a></li>
                     <li><a href="./case.html">Case</a></li>
-                    <li><a href="./product.html">Product</a></li>               
-                 </ul>
+                    <li><a href="./product.html">Product</a></li>
+                    <li><a href="./product-draw.html">Draw</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="ham_open"><ion-icon class="btn_menu" name="menu"></ion-icon></a>
+            <nav class="nav_ham" id="ham" >
+                <a href="#" class="ham_close"><ion-icon class="btn_close" name="close"></ion-icon></a>
+                <ul class="menu_ham">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./case.html">Case</a></li>
+                    <li><a href="./product.html">Product</a></li>
+                    <li><a href="./product-draw.html">Draw</a></li>
+                </ul>
             </nav>
         </div>
     </header>
     <main>
-        <section id="product">
+        <section id="product-article">
             <div class="aside">
                 <ul>
                     <li>
@@ -42,8 +57,8 @@
                     </li>
                 </ul>
             </div>
-            <div class="content">
-                <div class="productcontent">
+            <div class="article-content">
+                <div class="article-text">
                     <h1>CIS鵝時記趣</h1>
                     <h2>創新鵝肉品牌餐廳</h2>
                     <p>
@@ -51,16 +66,36 @@
                         #logo #logodesigner #商標設計 #品牌設計 #平面設計                    
                     </p>
                 </div>
-                <figure><img src="./image/folio/pt_folio_logo-2.jpg" alt="CIS鵝時記趣"></figure>
-                <figure><img src="./image/folio/pt_folio_logo-1.jpg" alt="CIS鵝時記趣"></figure>
-                <figure><img src="./image/folio/pt_folio_logo-3.jpg" alt="CIS鵝時記趣"></figure>
-                <figure><img src="./image/folio/pt_folio_logo-4.jpg" alt="CIS鵝時記趣"></figure>
-                <figure><img src="./image/folio/pt_folio_logo-5.jpg" alt="CIS鵝時記趣"></figure>
-                <figure><img src="./image/folio/pt_folio_logo-6.jpg" alt="CIS鵝時記趣"></figure>
-                <figure><img src="./image/folio/pt_folio_logo-7.jpg" alt="CIS鵝時記趣"></figure>
-                <figure><img src="./image/folio/pt_folio_logo-8.jpg" alt="CIS鵝時記趣"></figure>
-                <figure><img src="./image/folio/pt_folio_logo-9.jpg" alt="CIS鵝時記趣"></figure>
-                <figure><img src="./image/folio/pt_folio_logo-10.jpg" alt="CIS鵝時記趣"></figure>
+                <a  href="./image/folio/pt_folio_logo-1.jpg" data-lightbox="product_image_folio_logo-1" data-title="CIS鵝時記趣">
+                    <figure><img src="./image/folio/pt_folio_logo-1.jpg" alt="CIS鵝時記趣"></figure>
+                </a>
+                <a  href="./image/folio/pt_folio_logo-2.jpg" data-lightbox="product_image_folio_logo-1" data-title="CIS鵝時記趣">
+                    <figure><img src="./image/folio/pt_folio_logo-2.jpg" alt="CIS鵝時記趣"></figure>
+                </a>
+                <a  href="./image/folio/pt_folio_logo-3.jpg" data-lightbox="product_image_folio_logo-1" data-title="CIS鵝時記趣">
+                    <figure><img src="./image/folio/pt_folio_logo-3.jpg" alt="CIS鵝時記趣"></figure>
+                </a>
+                <a  href="./image/folio/pt_folio_logo-4.jpg" data-lightbox="product_image_folio_logo-1" data-title="CIS鵝時記趣">
+                    <figure><img src="./image/folio/pt_folio_logo-4.jpg" alt="CIS鵝時記趣"></figure>
+                </a>
+                <a  href="./image/folio/pt_folio_logo-5.jpg" data-lightbox="product_image_folio_logo-1" data-title="CIS鵝時記趣">
+                    <figure><img src="./image/folio/pt_folio_logo-5.jpg" alt="CIS鵝時記趣"></figure>
+                </a>
+                <a  href="./image/folio/pt_folio_logo-6.jpg" data-lightbox="product_image_folio_logo-1" data-title="CIS鵝時記趣">
+                    <figure><img src="./image/folio/pt_folio_logo-6.jpg" alt="CIS鵝時記趣"></figure>
+                </a>
+                <a  href="./image/folio/pt_folio_logo-7.jpg" data-lightbox="product_image_folio_logo-1" data-title="CIS鵝時記趣">
+                    <figure><img src="./image/folio/pt_folio_logo-7.jpg" alt="CIS鵝時記趣"></figure>
+                </a>
+                <a  href="./image/folio/pt_folio_logo-8.jpg" data-lightbox="product_image_folio_logo-1" data-title="CIS鵝時記趣">
+                    <figure><img src="./image/folio/pt_folio_logo-8.jpg" alt="CIS鵝時記趣"></figure>
+                </a>
+                <a  href="./image/folio/pt_folio_logo-9.jpg" data-lightbox="product_image_folio_logo-1" data-title="CIS鵝時記趣">
+                    <figure><img src="./image/folio/pt_folio_logo-9.jpg" alt="CIS鵝時記趣"></figure>
+                </a>
+                <a  href="./image/folio/pt_folio_logo-10.jpg" data-lightbox="product_image_folio_logo-1" data-title="CIS鵝時記趣">
+                    <figure><img src="./image/folio/pt_folio_logo-10.jpg" alt="CIS鵝時記趣"></figure>
+                </a>
             </div>
         </section>
     </main>
@@ -109,6 +144,14 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.10/jquery.smoove.min.js"></script>
         <!-- JS slick 輪播圖 -->
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <!-- JS lightbox -->
+        <script src="./js/lightbox.js"></script>
+        <!-- ionicon -->
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg .com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <!-- 自定義JS -->
+        <script src="./js/script.js"></script>
+        <!-- slick 輪播圖 -->
         <script>
             $(document).ready(function(){
                 $('.portfolio').slick({
