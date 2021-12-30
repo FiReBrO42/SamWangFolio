@@ -61,7 +61,9 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
+main{
+    overflow: hidden;
+}
 /* 顏色區 */
 .lightgrey{
     background-color: rgb(244, 249, 249);
@@ -126,18 +128,19 @@ section{
     }
 }
 /* 擋頭 */
-
+header{
+    max-width: 100%;
+    overflow: hidden;
+}
 .topbar{
+    align-items: center;
     margin-top: 20px;
-    display: flex;
-    justify-content: space-between;
     z-index: 9999;
 }
-header nav{
+.nav_menu{
     margin-right:5%;
 }
-header .menu{
-    margin-top: 1.5rem;
+.menu{
     display: flex;
     text-align: center;
 }
@@ -149,13 +152,192 @@ header .menu{
     font-weight: 700;
 }
 .menu a{
-    font-size: 1.7rem;
+    font-size: 2.3rem;
     text-decoration: none;
     color: rgb(170, 170, 170);
-
 }
+
 .menu a:hover{
     color: rgb(24, 109, 121);
+}
+/* RWD手機 */
+@media (max-width:767px){
+    .topbar{
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+    }
+    .topbar .logo{
+        width: 7rem;
+        margin-left: 15%;
+    }
+    .menu{
+        display: none;
+    }
+}
+/* RWD平板 */
+@media (min-width:768px){
+    .topbar{
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+    }
+    .topbar .logo{
+        width: 250px;
+        margin-left: 20%;
+    }
+    .menu{
+        display: none;
+    }
+}
+/* RWD桌機 */
+@media (min-width:992px){
+    .topbar{
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+    }
+    .topbar .logo{
+        width: 250px;
+        margin-left: 40%;
+    }
+    .menu{
+        display: flex;
+        flex-direction: row;
+        margin-top: 1.5rem;
+    }
+    .menu li{
+        display: inline-block;
+        margin: 1rem;
+    }
+}
+/* 漢堡選單 */
+.btn_menu{
+    color: rgb(109, 109, 109);
+    font-size: 64px;
+}
+.btn_close{
+    color: rgb(109, 109, 109);
+    font-size: 64px;
+}
+.btn_close:hover{
+    color: white;
+}
+.menu_ham li{
+    line-height: 6rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    padding-left: 20%;
+}
+.menu_ham li:hover{
+    background-color: white;
+    color: rgb(24, 109, 121);
+}
+.menu_ham li a {
+    font-size: 2.5rem;
+    text-decoration: none;
+    color: rgb(170, 170, 170);
+}
+.menu_ham li a:hover{
+    color: rgb(24, 109, 121);
+}
+/* RWD手機 */
+@media (max-width:767px){
+    .btn_menu{
+        font-size: 32px;
+    }
+    .btn_close{
+        font-size: 32px;
+    }
+    .btn_menu{
+        display: inline-block;
+        float: right;
+        margin-right: 100%;
+    }
+    .btn_close{
+        display: inline-block;
+        position: absolute;
+        top: 4%;
+        right: 17%;
+    }
+    .menu_ham li a {
+        font-size: 1.5rem;
+    }
+    .menu_ham li{
+        line-height: 4rem;
+    }
+    .nav_ham{
+        position: fixed;
+        top: 0;
+        right: -50%;
+        width: 50%;
+        height: 100%;
+        background-color: rgb(183, 210, 231);
+        padding-top: 20%;
+        transition: all 1s;
+    }
+    .ham_open{
+        display: block;
+    }
+    .ham_close{
+        display: block;
+    }
+    .open{
+        transform: translateX(-100%);
+        transition: all 1s;
+    }
+ 
+}
+/* RWD平板 */
+@media (min-width:768px){
+    .nav_ham{
+        position: fixed;
+        top: 0;
+        right: -50%;
+        width: 50%;
+        height: 100%;
+        background-color: rgb(183, 210, 231);
+        padding-top: 20%;
+        transition: all 1s;
+    }
+    .btn_menu{
+        display: inline-block;
+        float: right;
+        margin-right: 50px;
+    }
+    .btn_close{
+        display: inline-block;
+        position: absolute;
+        top: 3%;
+        right: 11%;
+    }
+    .ham_open{
+        display: block;
+    }
+    .ham_close{
+        display: block;
+    }
+    .open{
+        transform: translateX(-100%);
+        transition: all 1s;
+    }
+}
+/* RWD桌機 */
+@media (min-width:992px){
+    .nav_ham{
+        display: none;
+        transform: translateX(100%);
+    }
+    .ham_open{
+        display: none;
+    }
+    .ham_close{
+        display: none;
+    }
+}
+/* BANNER */
+#banner{
+    height: 100%;
 }
 .banner{
     height: 90vh;
@@ -205,13 +387,6 @@ header .menu{
 }
 /* RWD手機 */
 @media (max-width:767px){
-    .topbar .logo{
-        width: 7rem;
-        margin-left: 15%;
-    }
-    header .menu{
-        display: none;
-    }
     .banner{
         height: 35vh;
     }
@@ -229,13 +404,6 @@ header .menu{
 }
 /* RWD平板 */
 @media (min-width:768px){
-    .topbar .logo{
-        width: 250px;
-        margin-left: 20%;
-    }
-    header .menu{
-        display: none;
-    }
     .banner{
         height: 45vh;
     }
@@ -253,10 +421,6 @@ header .menu{
 }
 /* RWD桌機 */
 @media (min-width:992px){
-    .topbar .logo{
-        width: 250px;
-        margin-left: 40%;
-    }
     .banner{
         height: 100vh;
     }
@@ -270,111 +434,6 @@ header .menu{
         right: 8%;
         top:45%;
         font-size: 2.5rem;
-    }
-}
- 
-/* MENU BAR */
-    .ham {
-    width: 40px;
-    height: 40px;
-    border-radius: 5px;
-    background: rgba(0, 0, 0, 0.3);
-    display: block;
-    position: relative;
-  }
-  
-  .ham-origin {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-  }
-  
-  .ham-bar {
-    height: 2px;
-    width: 26px;
-    position: absolute;
-    background: white;
-    margin: -1px 0 0 -13px;
-    transition: all 0.5s;
-  }
-  
-  .ham-bar--top {
-    transform: translateY(-6px);
-  }
-  
-  .ham-bar--bottom {
-    transform: translateY(6px);
-  }
-  
-  #nav-toggle {
-    display: none;
-  }
-  
-  #nav-toggle:checked ~ .ham .ham-bar--middle {
-    opacity: 0;
-  }
-  
-  #nav-toggle:checked ~ .ham .ham-bar--top {
-    transform: rotate(-45deg);
-  }
-  
-  #nav-toggle:checked ~ .ham .ham-bar--bottom {
-    transform: rotate(45deg);
-  }
-  
-  /* Nav Style */
-  .menus {
-    position: fixed;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    padding: 30px;
-    background: rgba(0, 0, 0, 0.3);
-    /* 用 translate 把選單藏到畫面右邊去 */
-    transform: translateX(100%);
-    transition: transform 0.5s;
-  }
-  
-  #nav-toggle:checked ~ .menu {
-    transform: none;
-  }
-  
-  .menu-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .menu-item + .menu-item {
-    margin-top: 20px;
-  }
-  
-  .menu-link {
-    text-decoration: none;
-    color: white;
-  }
-  /* RWD手機 */
-@media (max-width:767px){
-    header .menu,.menu li{
-        display: none;
-    }
-}
-/* RWD平板 */
-@media (min-width:768px){
-    header .menu,.menu li{
-        display: none;
-    }
-}
-  /* RWD桌機 */
-@media (min-width:992px){
-    .menus,.menu-list,.ham,.ham-origin{
-        display: none;
-    }
-    header .menu{
-        display: flex;
-    }
-    .menu li{
-        display: inline-block;
     }
 }
 /* personal */
@@ -828,9 +887,10 @@ footer{
 }
 .border{
     display: flex;
-
     margin-left: 130px;
     width: 85%;
+    margin-top: 15px;
+    margin-bottom: 15px;
     border-top: solid 0.5px rgba(190, 189, 189, 0.568);
 }
 footer small{
@@ -865,6 +925,14 @@ footer .icon li{
 }
 /* RWD手機 */
 @media (max-width:767px){
+    .border{
+        margin-left: 10%;
+        width: 80%;
+        margin-bottom: 5px;
+    }
+    footer{
+        height: 60px;
+    }
     footer .logo{
         margin-left: 5%;
         width: 7rem;
@@ -884,12 +952,22 @@ footer .icon li{
         margin-left: 20px;
         font-size: 0.6rem;
     }
+    footer .icon{
+        margin-right: 1rem;
+    }
     footer .icon img{
-        width: 40px;
+        width: 35px;
     }
 }
 /* RWD平板 */
 @media (min-width:768px){
+    .border{
+        margin-left: 12.5%;
+        width: 75%;
+    }
+    footer{
+        height: 70px;
+    }
     footer .logo{
         margin-left: 5%;
         width: 250px;
@@ -903,9 +981,18 @@ footer .icon li{
     footer small{
         margin-left: 0px;
     }
+    footer .icon{
+        margin-right: 0.5rem;
+    }
+    footer .icon img{
+        width: 60px;
+    }
 }
 /* RWD桌機 */
 @media (min-width:992px){
+    footer .icon{
+        margin-right: 5rem;
+    }
     footer .logo{
         margin-left: 7%;
         width: 250px;
@@ -915,46 +1002,31 @@ footer .icon li{
 #product{
     display: flex;
      flex-direction: row;
-     margin-bottom: 30px;
-}
-.aside
-{
-    
-    display: flex;
-    flex-direction: c;
     justify-content: center;
-    align-items: center;
-    width: 200px;
-    height: 100%;
-    top: 0;
-    margin-left: 150px;
-    margin-right: 50px;
-    
 }
-.aside ul
-{
-    position: absolute;
-    height: 200px;
-    top: 32%;
-    left: 12%;
-    margin: -100px 0;
-    list-style-type: disc;
-}
-.aside ul li{
-    letter-spacing: 5px;
-    font-family: 'Noto Sans TC', sans-serif,'Playfair Display', serif;
-    font-weight: 700;
-    line-height: 45px;
-    font-size: 1.6rem;
-    
-}
-.aside ul li a {
+.product-link{
     text-decoration: none;
-    color: rgb(82, 77, 69);
 }
-.content
-{   
-    width: 70%;
+/* RWD手機 */
+@media (max-width:767px){
+
+}
+/* RWD平板 */
+@media (min-width:768px){
+    .product-link{
+        cursor:pointer;
+        pointer-events: none;
+    }
+}
+/* RWD桌機 */
+@media (min-width:992px){
+    .product-link{
+        cursor:pointer;
+        pointer-events: none;
+    }
+}
+    .content{   
+    width: 85%;
     padding-top: 15px;
     padding-right: 30px;
 }
@@ -990,8 +1062,8 @@ footer .icon li{
     color:rgb(80, 80, 80) ;
 }
 .productcard figure{
+    margin-top: 10px;
     width: 350px;
-    height: 250px;
 }
 .productcard figure img{
     border-radius: 5px;
@@ -1029,22 +1101,302 @@ footer .icon li{
     line-height: 30px;
     color: rgb(68, 67, 67)
 }
+.aside
+{
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 200px;
+    height: 100%;
+    margin-top: 2vh;
+    margin-left: 10%;
+    margin-right: 35px;
+    
+}
+.aside ul
+{
+    width: 220px;
+    height: 200px;
+    list-style-type: disc;
+}
+.aside ul li{
+    letter-spacing: 5px;
+    font-family: 'Noto Sans TC', sans-serif,'Playfair Display', serif;
+    font-weight: 700;
+    line-height: 45px;
+    font-size: 1.6rem;
+    
+}
+.aside ul li a {
+    text-decoration: none;
+    color: rgb(82, 77, 69);
+}
+/* RWD手機 */
+@media (max-width:767px){
+    #product{
+        margin-bottom: 5px;
+    }
+    .productcard{
+        flex-direction: column;
+        justify-content: center;
+        align-items:flex-start;
+        padding: 15px 15px 0px 15px;
+    }
+    .productcard figure{
+        width: auto;
+    }
+    .productcard article h1{
+        font-size: 1.5rem;
+    }
+    .productcard article p{
+        font-size: 1rem;
+        display: -webkit-box ;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        margin-top: 5px;
+    }
+    .productcard article{
+        height: auto;
+        padding-bottom: 15px;
+    }
+    .productcard>div{
+        justify-content: center;
+        align-items: center;
+    }
+    .btn-seemore{
+        display: none;
+    }
+    .content{
+        width: 95%;
+        margin-bottom: 15px;
+    }
+    .aside{
+        display: none;
+    }
+}
+/* RWD平板 */
+@media (min-width:768px){
+    #product{
+        margin-bottom: 15px;
+    }
+    .content{
+        width: 95%;
+    }
+    .productcard{
+        align-items: center;
+        padding: 10px 15px 0px 20px;
+    }
+    .productcard figure{
+       margin: auto 0px;
+    }
+    .productcard article h1{
+        font-size: 1.5rem;
+    }
+    .productcard article p{
+        font-size: 1rem;
+        display: -webkit-box ;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 5;
+        overflow: hidden;
+    }
+    .aside{
+        display: none;
+    }
+}
+/* RWD桌機 */
+@media (min-width:992px){
+    .content{
+        width: 85%;
+    }
+    #product{
+        margin-bottom: 30px;
+    }
+    .productcard{
+        align-items: center;
+    }
+    .productcard figure{
+        margin: auto 0px;
+    }
+    .productcard article p{
+        font-size: 1rem;
+        display: -webkit-box ;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 5;
+        overflow: hidden;
+    }
+    .aside{
+        display: flex;
+        flex-direction: column;
+    }
+}
+/* product 文章 */
+#product-article{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.article-content{
+    padding-top: 15px;
+}
+.article-text{
+    margin-bottom: 20px;
+}
+.article-text h1{
+    color: rgb(90, 75, 41);
+    font-weight: 700;
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+.article-text h2{
+    font-size: 28px;
+    margin: 5px 0px;
+    font-weight: 700;
+    color: rgb(58, 57, 57);
+}
+.article-text p{
+    font-size: 20px;
+    letter-spacing: 2px;
+    line-height: 30px;
+    color: rgb(68, 67, 67)
+}
+/* RWD手機 */
+@media (max-width:767px){
+    #product-article{
+        margin-top: 10px;
+    }
+    .article-content{
+        width: 80%;
+        padding-right: 0px;
+    }
+    .article-text h1{
+        font-size: 1.8rem;
+    }
+    .article-text h2{
+        font-size: 1.3rem;
+    }
+    .article-text p{
+        font-size: 1rem;
+    }
+}
+/* RWD平板 */
+@media (min-width:768px){
+
+    #product-article{
+        margin-top: 15px;
+    }
+    .article-content{
+        width: 80%;
+        padding-right: 0px;
+    }
+    .article-text h1{
+        font-size: 2rem;
+    }
+    .article-text h2{
+        font-size: 1.5rem;
+    }
+    .article-text p{
+        font-size: 1.2rem;
+    }
+}
+/* RWD桌機 */
+@media (min-width:992px){
+    #product-article{
+        margin-top: 20px;
+    }
+    .article-content{
+        width: 70%;
+        padding-right: 30px;
+    }
+}
+/* CASE */
+#case{
+    display: flex;
+    flex-direction: row;
+}
+/* RWD手機 */
+@media (max-width:767px){
+    #case{
+        margin-bottom: 5px;
+    }
+}
+/* RWD平板 */
+@media (min-width:768px){
+    #case{
+        margin-bottom: 15px;
+    }
+}
+/* RWD桌機 */
+@media (min-width:992px){
+    #case{
+        margin-bottom: 30px;
+    }
+}
 /* 摺疊 */
 .card{
-    margin:5px 10px;
     padding-top: 20px;
     border-radius: 15px;
 }
 .drawcontent{   
     display:flex;
     flex-flow: wrap;
-    width: 70%;
-    padding-top: 15px;
-    padding-right: 30px;
-    margin-left: 3%;
 }
 .card-title{
     text-align: center;
+}
+/* RWD手機 */
+@media (max-width:767px){
+    .card{
+        width: 30%;
+        margin:5px 5px;
+    }
+    .drawcontent{
+        justify-content: flex-start;
+        width: 100%;
+        padding-top: 10px;
+        margin-left: 0;
+        padding-left: 12px;
+        padding-right: 5px;
+    }
+    .card-title{
+        font-size: 0.5rem;
+    }
+    .card-body{
+        padding: 0.5rem;
+    }
+}
+/* RWD平板 */
+@media (min-width:768px){
+    .card{
+        width: 30%;
+        margin:5px 5px;
+    }
+    .drawcontent{
+        justify-content: flex-start;
+        width: 100%;
+        padding-top: 15px;
+        padding-right: 0;
+        margin-left: 0;
+        padding-left: 40px;
+    }
+    .card-title{
+        font-size: 1rem;
+    }
+}
+/* RWD桌機 */
+@media (min-width:992px){
+    .card{
+        width:15rem;
+        margin:5px 5px;
+    }
+    .drawcontent{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .card-title{
+        font-size: 1rem;
+    }
 }
 /* page */
 .pagination{
@@ -1065,5 +1417,4 @@ footer .icon li{
 }
 /* RWD桌機 */
 @media (min-width:992px){
- 
 }
