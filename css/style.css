@@ -475,11 +475,11 @@ header{
          align-items:center;
     }
     #personal figure{
-        height: fit-content;
-        width: fit-content;
+        width: 200px;
+        height: 200px;
     }
     #personal figure img{
-        width: 200px;
+        width: 100%;
     }
     .contain{
         margin-top: 10px;
@@ -518,7 +518,6 @@ header{
          align-items: flex-start;
     }
     #personal figure{
-        height: fit-content;
         width: 400px;
         margin-left: 4%;
     }
